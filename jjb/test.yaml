@@ -1,0 +1,20 @@
+- project:
+    name: test
+    jobs:
+        - '{name}-job-{num}'
+    num:
+      - '1'
+      - '2'
+      - '3'
+      - '4'
+
+- job-template:
+    name: '{name}-job-{num}'
+    node: test
+
+    project-type: freestyle
+
+    builders:
+        - shell: |
+            #!/bin/bash
+            echo Hello

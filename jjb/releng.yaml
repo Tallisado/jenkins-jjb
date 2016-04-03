@@ -1,0 +1,67 @@
+- project:
+    name: ci
+    jobs:
+        - '{name}-verify-jjb'
+        - '{name}-merge-jjb'
+
+- job-template:
+    name: '{name}-verify-jjb'
+    node: test
+
+    project-type: freestyle
+
+    properties:
+        - github:
+            url: https://github.com/enkei256/otthack-ci
+
+    scm:
+      - git:
+            url: https://github.com/enkei256/otthack-ci
+            refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
+            branches:
+                - '${{sha1}}'
+            skip-tag: true
+
+    triggers:
+        - github-pull-request:
+            github-hooks: true
+            trigger-phrase: 'recheck'
+            permit-all: true
+
+    builders:
+        - shell: |
+            #!/bin/bash
+            virtualenv venv
+            source venv/bin/activate
+            pip install jenkins-job-builder
+            pip freeze
+            jenkins-jobs test --recursive -o job_output jjb/
+
+- job-template:
+    name: '{name}-merge-jjb'
+    node: test
+
+    project-type: freestyle
+
+    properties:
+        - github:
+            url: https://github.com/enkei256/otthack-ci
+
+    scm:
+      - git:
+            url: https://github.com/enkei256/otthack-ci
+            branches:
+                - '*/master'
+            skip-tag: true
+
+    triggers:
+        - github
+
+    builders:
+        - shell: |
+            #!/bin/bash
+            virtualenv venv
+            source venv/bin/activate
+            pip install jenkins-job-builder
+            pip freeze
+            jenkins-jobs update --recursive --delete-old jjb/
