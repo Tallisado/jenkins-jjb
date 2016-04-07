@@ -6,7 +6,7 @@
 
 - job-template:
     name: '{name}-verify-jjb'
-    node: test
+    node: master
 
     project-type: freestyle
 
@@ -35,11 +35,11 @@
             source venv/bin/activate
             pip install jenkins-job-builder
             pip freeze
-            jenkins-jobs test --recursive -o job_output jjb/
+            jenkins-jobs master --recursive -o job_output jjb/
 
 - job-template:
     name: '{name}-merge-jjb'
-    node: test
+    node: master
 
     project-type: freestyle
 

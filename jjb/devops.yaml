@@ -35,7 +35,7 @@
     builders:
         - shell: |
             #!/bin/bash
-            ls -al
+            ls -al || true
 
 - job-template:
     name: '{name}-merge'
