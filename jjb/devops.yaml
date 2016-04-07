@@ -11,11 +11,11 @@
 
     properties:
         - github:
-            url: https://github.com/inyounghackathon/devops
+            url: https://github.com/tallisado/plugin1
 
     scm:
       - git:
-            url: https://github.com/inyounghackathon/devops
+            url: https://github.com/tallisado/plugin1
             refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
             branches:
                 - '${{sha1}}'
@@ -27,15 +27,15 @@
             trigger-phrase: 'recheck'
             permit-all: true
 
-    wrappers:
-        - ssh-agent-credentials:
-            users:
-                - '2733d65e-3472-48cb-b0e5-4b9230e3caf9'
-
-    builders:
-        - shell: |
-            #!/bin/bash
-            ssh -oStrictHostKeyChecking=no superdave@13.92.119.44 docker ps
+    # wrappers:
+    #     - ssh-agent-credentials:
+    #         users:
+    #             - '2733d65e-3472-48cb-b0e5-4b9230e3caf9'
+    #
+    # builders:
+    #     - shell: |
+    #         #!/bin/bash
+    #         ssh -oStrictHostKeyChecking=no superdave@13.92.119.44 docker ps
 
 - job-template:
     name: '{name}-merge'
@@ -44,24 +44,24 @@
 
     properties:
         - github:
-            url: https://github.com/inyounghackathon/devops
+            url: https://github.com/tallisado/plugin1
 
     scm:
       - git:
-            url: https://github.com/inyounghackathon/devops
+            url: https://github.com/tallisado/plugin1
             branches:
                 - '*/master'
             skip-tag: true
 
     triggers:
         - github
-
-    wrappers:
-        - ssh-agent-credentials:
-            users:
-                - '2733d65e-3472-48cb-b0e5-4b9230e3caf9'
-
-    builders:
-        - shell: |
-            #!/bin/bash
-            ssh -oStrictHostKeyChecking=no superdave@13.92.119.44 'sh /home/superdave/otthack-ci/redeployDocker.sh'
+    #
+    # wrappers:
+    #     - ssh-agent-credentials:
+    #         users:
+    #             - '2733d65e-3472-48cb-b0e5-4b9230e3caf9'
+    #
+    # builders:
+    #     - shell: |
+    #         #!/bin/bash
+    #         ssh -oStrictHostKeyChecking=no superdave@13.92.119.44 'sh /home/superdave/otthack-ci/redeployDocker.sh'
