@@ -64,4 +64,4 @@
     builders:
         - shell: |
             #!/bin/bash
-            ls -al
+            ls -al || true
