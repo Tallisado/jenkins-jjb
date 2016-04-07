@@ -12,11 +12,11 @@
 
     properties:
         - github:
-            url: https://github.com/enkei256/otthack-ci
+            url: https://github.com/tallisado/jenkins-jjb
 
     scm:
       - git:
-            url: https://github.com/enkei256/otthack-ci
+            url: https://github.com/tallisado/jenkins-jjb
             refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
             branches:
                 - '${{sha1}}'
@@ -45,11 +45,11 @@
 
     properties:
         - github:
-            url: https://github.com/enkei256/otthack-ci
+            url: https://github.com/tallisado/jenkins-jjb
 
     scm:
       - git:
-            url: https://github.com/enkei256/otthack-ci
+            url: https://github.com/tallisado/jenkins-jjb
             branches:
                 - '*/master'
             skip-tag: true
