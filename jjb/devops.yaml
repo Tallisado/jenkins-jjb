@@ -11,11 +11,11 @@
 
     properties:
         - github:
-            url: https://github.com/tallisado/plugin1
+            url: https://github.com/Tallisado/jenkins-plugin1
 
     scm:
       - git:
-            url: https://github.com/tallisado/plugin1
+            url: https://github.com/Tallisado/jenkins-plugin1
             refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
             branches:
                 - '${{sha1}}'
@@ -44,14 +44,15 @@
 
     properties:
         - github:
-            url: https://github.com/tallisado/plugin1
+            url: https://github.com/Tallisado/jenkins-plugin1
 
     scm:
       - git:
-            url: https://github.com/tallisado/plugin1
+            url: https://github.com/Tallisado/jenkins-plugin1
             branches:
                 - '*/master'
             skip-tag: true
+            credentials-id: 'b0b6daf1-3f2b-4713-a05c-25e971850778'
 
     triggers:
         - github
