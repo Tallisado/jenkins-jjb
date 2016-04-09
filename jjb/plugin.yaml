@@ -1,5 +1,5 @@
 - project:
-    name: devops
+    name: plugin1
     jobs:
         - '{name}-verify'
         - '{name}-merge'
@@ -52,16 +52,16 @@
             branches:
                 - '*/master'
             skip-tag: true
-            credentials-id: 'b0b6daf1-3f2b-4713-a05c-25e971850778'
+            # credentials-id: 'b0b6daf1-3f2b-4713-a05c-25e971850778'
 
     triggers:
         - github
-    #
-    # wrappers:
-    #     - ssh-agent-credentials:
-    #         users:
-    #             - '2733d65e-3472-48cb-b0e5-4b9230e3caf9'
-    #
+
+    wrappers:
+        - ssh-agent-credentials:
+            users:
+                - '2733d65e-3472-48cb-b0e5-4b9230e3caf9'
+
     builders:
         - shell: |
             #!/bin/bash
