@@ -64,4 +64,4 @@
             source venv/bin/activate
             pip install jenkins-job-builder
             pip freeze
-            jenkins-jobs update --recursive --delete-old jjb/ 
+            jenkins-jobs update --recursive --delete-old jjb/
