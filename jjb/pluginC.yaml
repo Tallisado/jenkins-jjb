@@ -1,11 +1,11 @@
 - project:
-    name: pluginC
+    name: plugin
     jobs:
-        - '{name}-verify'
-        - '{name}-merge'
+        - '{name}-verify-C'
+        - '{name}-merge-C'
 
 - job-template:
-    name: '{name}-verify'
+    name: '{name}-verify-C'
 
     project-type: freestyle
 
@@ -38,7 +38,7 @@
             echo "PluginC - Running Unit Tests"
 
 - job-template:
-    name: '{name}-merge'
+    name: '{name}-merge-C'
 
     project-type: freestyle
 

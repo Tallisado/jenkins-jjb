@@ -1,15 +1,15 @@
 - project:
-    name: pluginA
+    name: plugin
     jobs:
-        - '{name}-verify'
-        - '{name}-merge'
-        - '{name}-build'
+        - '{name}-verify-A'
+        - '{name}-merge-A'
+        - '{name}-build-A'
 
         #- '{name}-pom-bump'
 
 
 - job-template:
-    name: '{name}-verify'
+    name: '{name}-verify-A'
 
     project-type: freestyle
 
@@ -37,7 +37,7 @@
             echo "PluginA - Running Unit Tests"
 
 - job-template:
-    name: '{name}-merge'
+    name: '{name}-merge-A'
 
     project-type: freestyle
 
@@ -63,7 +63,7 @@
             echo "Pom Bump - AppB"
 
 - job-template:
-    name: '{name}-build'
+    name: '{name}-build-A'
 
     project-type: freestyle
 
