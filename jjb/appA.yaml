@@ -75,7 +75,7 @@
             echo "2. Build each locally, so the jars are used in app build process"
 
 - job-template:
-    name: '{name}-deploy'
+    name: '{name}-build'
 
     project-type: freestyle
 
@@ -102,7 +102,7 @@
     builders:
         - shell: |
             #!/bin/bash
-            touch '${{sha1}}'WAR 
+            touch '${{sha1}}'WAR
             echo "building war !"
 
 - job-template:
