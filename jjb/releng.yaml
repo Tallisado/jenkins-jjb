@@ -6,7 +6,7 @@
 
 - job-template:
     name: '{name}-verify-jjb'
-    node: gateway`
+    node: gateway
 
     project-type: freestyle
 
