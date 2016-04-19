@@ -1,11 +1,11 @@
 - project:
-    name: pluginB
+    name: plugin
     jobs:
-        - '{name}-verify'
-        - '{name}-merge'
+        - '{name}-verify-B'
+        - '{name}-merge-B'
 
 - job-template:
-    name: '{name}-verify-2'
+    name: '{name}-verify-B'
 
     project-type: freestyle
 
@@ -38,7 +38,7 @@
             echo "PluginB - Running Unit Tests"
 
 - job-template:
-    name: '{name}-merge'
+    name: '{name}-merge-B'
 
     project-type: freestyle
 
