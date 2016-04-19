@@ -1,18 +1,17 @@
 - project:
-    name: plugin
     jobs:
-        - '{name}-a-verify'
-        - '{name}-a-merge'
-        - '{name}-a-build'
-        - '{name}-b-verify'
-        - '{name}-b-merge'
-        - '{name}-c-verify'
-        - '{name}-c-merge'
-        #- '{name}-pom-bump'
+        - 'plugin-a-verify'
+        - 'plugin-a-merge'
+        - 'plugin-a-build'
+        - 'plugin-b-verify'
+        - 'plugin-b-merge'
+        - 'plugin-c-verify'
+        - 'plugin-c-merge'
+        #- 'plugin-pom-bump'
 
 
 - job-template:
-    name: '{name}-a-verify'
+    name: 'plugin-a-verify'
     node: gateway
     project-type: freestyle
 
@@ -40,7 +39,7 @@
             echo "PluginA - Running Unit Tests"
 
 - job-template:
-    name: '{name}-a-merge'
+    name: 'plugin-a-merge'
     node: gateway
     project-type: freestyle
 
@@ -66,7 +65,7 @@
             echo "Pom Bump - AppB"
 
 - job-template:
-    name: '{name}-a-build'
+    name: 'plugin-a-build'
     node: gateway
     project-type: freestyle
 
@@ -93,7 +92,7 @@
 # PLUGIN B
 
 - job-template:
-    name: '{name}-b-verify'
+    name: 'plugin-b-verify'
     node: gateway
     project-type: freestyle
 
@@ -126,7 +125,7 @@
             echo "PluginB - Running Unit Tests"
 
 - job-template:
-    name: '{name}-b-merge'
+    name: 'plugin-b-merge'
     node: gateway
     project-type: freestyle
 
@@ -160,7 +159,7 @@
 
 # PLUGIN C
 - job-template:
-    name: '{name}-c-verify'
+    name: 'plugin-c-verify'
     node: gateway
     project-type: freestyle
 
@@ -193,7 +192,7 @@
             echo "PluginC - Running Unit Tests"
 
 - job-template:
-    name: '{name}-c-merge'
+    name: 'plugin-c-merge'
     node: gateway
     project-type: freestyle
 
