@@ -6,7 +6,7 @@
 
 - job-template:
     name: '{name}-verify-jjb'
-    node: master
+    node: gateway`
 
     project-type: freestyle
 
@@ -39,7 +39,7 @@
 
 - job-template:
     name: '{name}-merge-jjb'
-    node: master
+    node: gateway
 
     project-type: freestyle
 
@@ -60,6 +60,7 @@
     builders:
         - shell: |
             #!/bin/bash
+            echo
             virtualenv venv
             source venv/bin/activate
             pip install jenkins-job-builder
