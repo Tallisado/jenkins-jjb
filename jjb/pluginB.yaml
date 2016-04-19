@@ -5,7 +5,7 @@
         - '{name}-merge'
 
 - job-template:
-    name: '{name}-verify'
+    name: '{name}-verify-2'
 
     project-type: freestyle
 

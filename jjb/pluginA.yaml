@@ -4,6 +4,7 @@
         - '{name}-verify'
         - '{name}-merge'
         - '{name}-build'
+
         #- '{name}-pom-bump'
 
 
