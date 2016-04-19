@@ -1,4 +1,5 @@
 - project:
+    name: garbage
     jobs:
         - 'plugin-a-verify'
         - 'plugin-a-merge'
