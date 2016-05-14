@@ -6,7 +6,6 @@
 
 - job-template:
     name: '{name}-verify-jjb'
-    node: gateway
 
     project-type: freestyle
 
@@ -39,7 +38,6 @@
 
 - job-template:
     name: '{name}-merge-jjb'
-    node: gateway
 
     project-type: freestyle
 
